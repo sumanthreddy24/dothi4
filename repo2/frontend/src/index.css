@@ -114,8 +114,8 @@
     padding: 8.5px 12px;
     border-radius: 7px;
     font-family: inherit;
-    font-weight: 600;
-    font-size: 14px;
+    font-weight: 500;
+    font-size: 12px;
     color: #fff;
     display: flex;
     align-items: center;
@@ -123,6 +123,24 @@
     gap: 6px;
     cursor: pointer;
   }
+  .add_btn{
+    
+      border: none;
+      outline: none;
+      background: var(--light-blue-color);
+      /* padding: 8.5px 12px; */
+      border-radius: 7px;
+      font-family: inherit;
+      /* font-weight: 500;
+      font-size: 12px; */
+      color: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      cursor: pointer;
+    }
+  
   .gray_btn {
     border: none;
     outline: none;
@@ -186,6 +204,18 @@
   
   /*---Circles------*/
   .small_circle {
+    position: relative;
+    height: 55px;
+    width: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 11px;
+    /* background: var(--bg-third); */
+    cursor: pointer;
+  }
+  .small_circle1 {
     position: relative;
     height: 55px;
     width: 36px;

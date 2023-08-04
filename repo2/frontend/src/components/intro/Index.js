@@ -5,6 +5,10 @@ import axios from "axios";
 import { useSelector } from "react-redux";
 import EditDetails from "./EditDetails";
 import LoyaltyIcon from '@mui/icons-material/Loyalty';
+import HomeIcon from '@mui/icons-material/Home';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import WorkIcon from '@mui/icons-material/Work';
+import SchoolIcon from '@mui/icons-material/School';
 
 export default function Intro({ detailss, visitor, setOthername }) {
   const { user } = useSelector((state) => ({ ...state }));
@@ -95,19 +99,19 @@ export default function Intro({ detailss, visitor, setOthername }) {
       
       {details?.job && details?.workplace ? (
         <div className="info_profile">
-          <img src="../../../icons/job.png" alt="" />
+          <WorkIcon />
           works as {details?.job} at <b>{details?.workplace}</b>
         </div>
       ) : details?.job && !details?.workplace ? (
         <div className="info_profile">
-          <img src="../../../icons/job.png" alt="" />
+          <WorkIcon />
           works as {details?.job}
         </div>
       ) : (
         details?.workplace &&
         !details?.job && (
           <div className="info_profile">
-            <img src="../../../icons/job.png" alt="" />
+            <WorkIcon />
             works at {details?.workplace}
           </div>
         )
@@ -120,31 +124,31 @@ export default function Intro({ detailss, visitor, setOthername }) {
       )}
       {details?.college && (
         <div className="info_profile">
-          <img src="../../../icons/studies.png" alt="" />
+          <SchoolIcon />
           studied at {details?.college}
         </div>
       )}
       {details?.highSchool && (
         <div className="info_profile">
-          <img src="../../../icons/studies.png" alt="" />
+          <SchoolIcon />
           studied at {details?.highSchool}
         </div>
       )}
       {details?.currentCity && (
         <div className="info_profile">
-          <img src="../../../icons/home.png" alt="" />
+          <HomeIcon />
           Lives in {details?.currentCity}
         </div>
       )}
       {details?.hometown && (
         <div className="info_profile">
-          <img src="../../../icons/home.png" alt="" />
+          <HomeIcon />
           From {details?.hometown}
         </div>
       )}
       {details?.hometown && (
         <div className="info_profile">
-          <img src="../../../icons/instagram.png" alt="" />
+          <InstagramIcon />
           <a
             href={`https://www.instagram.com/${details?.instagram}`}
             target="_blank"

@@ -13,8 +13,22 @@ export default function Post({ post, user, profile }) {
   const [reacts, setReacts] = useState();
   const [check, setCheck] = useState();
   const [total, setTotal] = useState(0);
+  const [isInView, setIsInView] = useState(false);
   useEffect(() => {
     getPostReacts();
+    const handleScroll = () => {
+      const postsContainer = document.querySelector(".posts-container");
+      if (postsContainer) {
+        const rect = postsContainer.getBoundingClientRect();
+        const isVisible = rect.top < window.innerHeight && rect.bottom >= 0;
+        setIsInView(isVisible);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    // Remove event listener on component unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, [post]);
 
   const getPostReacts = async () => {
@@ -50,7 +64,7 @@ export default function Post({ post, user, profile }) {
     }
   };
   return (
-    <div className="post" style={{ width: `${profile && "100%"}` }}>
+    <div className={`post ${isInView ? "animate-slide-in" : ""}`} style={{ width: `${profile && "100%"}` }}>
       <div className="post_header">
         <Link
           // to={`/profile/${post.user.username}`}

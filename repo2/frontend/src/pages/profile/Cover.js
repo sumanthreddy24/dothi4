@@ -158,7 +158,7 @@ export default function Cover({ cover, visitor, photos }) {
             image={coverPicture}
             crop={crop}
             zoom={zoom}
-            aspect={width / 200}
+            aspect={width / 150}
             onCropChange={setCrop}
             onCropComplete={onCropComplete}
             onZoomChange={setZoom}

@@ -9,13 +9,18 @@ export default function AddFriendSmallCard({ item }) {
               ? `${item.profile_name.substring(0, 11)}...`
               : item.profile_name}
           </div>
-          <div className="light_blue_btn">
-            <img
+          <div className="add_btn">
+            {/* <img
               src="../../../icons/addFriend.png"
               alt=""
-              className="filter_blue"
+              style={{color:"black"}}
             />
-            Add Friend
+            <span>Add </span><span>Friend</span> */}
+            <button data-hover="add friend"  ><div><img
+              src="../../../icons/addFriend.png"
+              alt=""
+              style={{color:"black"}}
+            /></div></button>
           </div>
         </div>
       </div>

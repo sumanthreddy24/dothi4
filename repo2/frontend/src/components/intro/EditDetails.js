@@ -3,7 +3,7 @@ import Detail from "./Detail";
 import useOnCLickOutside from "../../helpers/clickOutside";
 import CloseIcon from '@mui/icons-material/Close';
 import LoyaltyIcon from '@mui/icons-material/Loyalty';
-
+import WorkIcon from '@mui/icons-material/Work'; 
 export default function EditDetails({
   details,
   handleChange,
